@@ -1,0 +1,21 @@
+
+
+Solution 1:  Time O(n), space O(n)
+```python
+
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        times={}
+        for letter in nums:
+            times[letter] = times.get(letter, 0) + 1
+        if times[max(times, key=times.get)] > len(nums)//2:
+            return max(times, key=times.get)
+        else:
+            return 'Null'
+            
+            
+```
